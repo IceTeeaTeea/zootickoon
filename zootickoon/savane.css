@@ -1,0 +1,55 @@
+:root {
+--accent: #c07f1e;
+--creme: #f7f3e9;
+--police: Georgia, serif;
+}
+nav ul {
+display: flex;
+gap: 1rem;
+list-style: none;
+padding: 0;
+}
+.cartes {
+display: grid;
+grid-template-columns: 1fr;
+gap: 1rem;
+}
+@media (min-width: 768px) {
+    .cartes {
+grid-template-columns: repeat(3, 1fr);
+    }
+}
+cartes article {
+transition: transform 0.2s;
+}
+.cartes article:hover {
+transform: scale(1.02);
+}
+th {
+background: var(--accent);
+color: white;
+}
+tr:nth-child(even) {
+background: #f0f0f0;
+}
+body {
+    background-color: rgb(252, 246, 231);
+}
+h1 {
+  color: #d18016; 
+}
+h2 {
+  color: #d18016; 
+}
+h3 {
+  color: #d18016; 
+}
+h1 {
+  font-weight: bold;
+}
+h2 {
+  font-weight: bold;
+}
+h3 {
+  font-weight: bold;
+}

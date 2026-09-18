@@ -1,31 +1,63 @@
-<form action="traiter_signalement.php" method="post">
- method="post" : les champs partent dans le corps de la requête, pas dans l'adresse
- <fieldset>
- <legend>Signaler une panne</legend>
- <label for="salle">Salle</label>
- <select id="salle" name="salle" required>
- for = id : cliquer sur le libellé donne le focus au champ ; name : le nom que PHP lira dans
-$_POST
- <option value="S1">Salle 1</option>
- <option value="S2">Salle 2</option>
- value : ce qui part (le code) ; le texte : ce qu'on lit
- </select>
- <label for="sujet">Sujet</label>
- <input id="sujet" name="sujet" type="text" maxlength="120" required>
- <label for="detail">Description</label>
- <textarea id="detail" name="detail" required></textarea>
- <p>Urgence :
- <input type="radio" id="u1" name="urgence" value="basse" checked>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signaler un incident</title>
+    <link rel="stylesheet" href="ticket.css">
+</head>
+<body>
+    <main>
+    <h1>Signaler un incident</h1>
+<nav aria-label="Menu principal">
+ <ul><li><a href="index.html">Accueil</a></li><li><a
+href="secteurs.html">Secteurs</a></li><li><a
+href="ticket.html">Signaler un incident</a></li></ul>
+<form action="traiter_ticket.php" method="post"></form>
+<fieldset>
+<legend>Declaration d'incident</legend>
+<label for="salle">Secteur concerne</label>
+<select id="salle" name="salle" required>
+<option value="S1">Savane</option>
+<option value="S2">Foret tropicale</option>
+<option value="S3">Banquise</option>
+<option value="S4">Ferme pedagogique</option>
+<option value="S5">Grande voliere</option>
+<option value="S6">Aquarium</option>
+</select>
+<br>
+<br>
+<label for="sujet">Sujet</label>
+<input id="sujet" name="sujet" type="text" maxlength="120" required>
+<br>
+<br>
+<label for="detail">Description</label>
+<textarea id="detail" name="detail" required></textarea>
+<br>
+<fieldset>
+<legend>Priorite :</legend>
+<br>
+<br>
+<input type="radio" id="u1" name="priorite" value="basse" checked>
 <label for="u1">basse</label>
- <input type="radio" id="u2" name="urgence" value="haute"> <label
-for="u2">haute</label>
- même name sur les boutons radio : un seul coché à la fois ; un id différent pour chaque
-label
- </p>
- <label for="mel">Votre mél</label>
- <input id="mel" name="mel" type="email" required>
- type="email" : le navigateur exige un @ avant d'envoyer ; PHP revérifiera de toute façon
-(mission 4)
- <button>Envoyer</button>
- </fieldset>
+<br>
+<br>
+<input type="radio" id="u2" name="priorite" value="moyenne"> <label
+for="u2">moyenne</label>
+<br>
+<br>
+<input type="radio" id="u3" name="priorite" value="haute"> <label
+for="u3">haute</label>
+</fieldset>
+<label for="mel">Votre adresse electronique</label>
+<input id="mel" name="mel" type="email" required>
+<br>
+<br>
+<button>Envoyer</button>
+</fieldset>
 </form>
+ </nav>
+ Parc animalier de Val-Sorin -- route des Etangs, Val-Sorin
+</main>
+</body>
+</html>
